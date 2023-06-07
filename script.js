@@ -44,7 +44,7 @@ document.querySelector('.check').addEventListener('click', function () {
       }
       //xử lý sự kiện khi score = 0 => game over
       if (score === 0) {
-        document.querySelector('.message').textContent = `Game Over!`;
+        document.querySelector('.message').textContent = `Game Over! 😢`;
         document.querySelector('body').style.backgroundColor = '#B22222';
       }
     } else
