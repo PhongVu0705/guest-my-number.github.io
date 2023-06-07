@@ -39,7 +39,7 @@ document.querySelector('.check').addEventListener('click', function () {
         document.querySelector('.number').textContent = hiddenNumber;
       } else {
         //xử lý khi giá trị sai
-        score = score - 1;
+        score--;
         document.querySelector('.score').textContent = score;
       }
       //xử lý sự kiện khi score = 0 => game over
@@ -82,4 +82,3 @@ const checkInputValue = function (paramInput) {
   } else result = 'Please input again!';
   return result;
 };
-//hàm kiểm tra khi game over
