@@ -37,6 +37,8 @@ document.querySelector('.check').addEventListener('click', function () {
         document.querySelector('body').style.backgroundColor = '#228B22';
         //đổi số trong ô hidden
         document.querySelector('.number').textContent = hiddenNumber;
+        //đổi kích thức ô hidden number
+        document.querySelector('.number').style.width = '30rem';
       } else {
         //xử lý khi giá trị sai
         score--;
@@ -68,6 +70,8 @@ document.querySelector('.again').addEventListener('click', function () {
   document.querySelector('.score').textContent = 20;
   //set hidden number
   document.querySelector('.number').textContent = '?';
+  //set lại kích thước ô hidden number
+  document.querySelector('.number').style.width = '15rem';
 });
 
 //vùng hàng dùng chung
