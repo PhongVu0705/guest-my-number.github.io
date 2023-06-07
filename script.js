@@ -24,28 +24,31 @@ document.querySelector('.check').addEventListener('click', function () {
     //lấy dữ liệu vào
     const inputValue = document.querySelector('.guess').value;
     //kiểm tra dữ liệu vào
-    let inputValueCheck = checkInputValue(inputValue);
-    //xử lý dữ liệu:
-    document.querySelector('.message').textContent = inputValueCheck;
-    //xử lý khi giá trị đúng
-    if (inputValueCheck === 'Correct number!') {
-      //set highscore
-      highScore = score;
-      document.querySelector('.highscore').textContent = highScore;
-      //đổi màu background
-      document.querySelector('body').style.backgroundColor = '#228B22';
-      //đổi số trong ô hidden
-      document.querySelector('.number').textContent = hiddenNumber;
-    } else {
-      //xử lý khi giá trị sai
-      score = score - 1;
-      document.querySelector('.score').textContent = score;
-    }
-    //xử lý sự kiện khi score = 0 => game over
-    if (score === 0) {
-      document.querySelector('.message').textContent = `Game Over!`;
-      document.querySelector('body').style.backgroundColor = '#B22222';
-    }
+    if (inputValue) {
+      let inputValueCheck = checkInputValue(inputValue);
+      //xử lý dữ liệu:
+      document.querySelector('.message').textContent = inputValueCheck;
+      //xử lý khi giá trị đúng
+      if (inputValueCheck === 'Correct number!') {
+        //set highscore
+        highScore = score;
+        document.querySelector('.highscore').textContent = highScore;
+        //đổi màu background
+        document.querySelector('body').style.backgroundColor = '#228B22';
+        //đổi số trong ô hidden
+        document.querySelector('.number').textContent = hiddenNumber;
+      } else {
+        //xử lý khi giá trị sai
+        score = score - 1;
+        document.querySelector('.score').textContent = score;
+      }
+      //xử lý sự kiện khi score = 0 => game over
+      if (score === 0) {
+        document.querySelector('.message').textContent = `Game Over!`;
+        document.querySelector('body').style.backgroundColor = '#B22222';
+      }
+    } else
+      document.querySelector('.message').textContent = `Please input a number!`;
   }
 });
 //xử lý sự kiện nút again
