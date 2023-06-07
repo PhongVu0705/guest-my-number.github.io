@@ -31,7 +31,9 @@ document.querySelector('.check').addEventListener('click', function () {
       //xử lý khi giá trị đúng
       if (inputValueCheck === 'Correct number!') {
         //set highscore
-        highScore = score;
+        if (score > highScore) {
+          highScore = score;
+        }
         document.querySelector('.highscore').textContent = highScore;
         //đổi màu background
         document.querySelector('body').style.backgroundColor = '#228B22';
